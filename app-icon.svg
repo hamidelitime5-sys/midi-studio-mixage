@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#311042" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="110" fill="url(#bg)" stroke="#334155" stroke-width="6" />
+
+  <!-- Subtle grid / mixer track accents -->
+  <line x1="140" y1="90" x2="140" y2="420" stroke="#1e293b" stroke-width="4" stroke-dasharray="8 6" />
+  <line x1="256" y1="90" x2="256" y2="420" stroke="#334155" stroke-width="4" stroke-dasharray="8 6" />
+  <line x1="372" y1="90" x2="372" y2="420" stroke="#1e293b" stroke-width="4" stroke-dasharray="8 6" />
+
+  <!-- Left Slider Track & Cap (Amber Gold) -->
+  <line x1="140" y1="120" x2="140" y2="390" stroke="#475569" stroke-width="12" stroke-linecap="round" />
+  <rect x="116" y="240" width="48" height="28" rx="7" fill="url(#gold)" filter="url(#glow)" stroke="#ffffff" stroke-width="2" />
+  <line x1="124" y1="254" x2="156" y2="254" stroke="#78350f" stroke-width="3" />
+
+  <!-- Center Piano Keys / Music Note Crest -->
+  <!-- Piano Base -->
+  <rect x="200" y="320" width="112" height="80" rx="10" fill="#0f172a" stroke="#475569" stroke-width="4" />
+  <!-- White keys -->
+  <rect x="206" y="324" width="22" height="72" rx="4" fill="#f8fafc" />
+  <rect x="232" y="324" width="22" height="72" rx="4" fill="#f8fafc" />
+  <rect x="258" y="324" width="22" height="72" rx="4" fill="#f8fafc" />
+  <rect x="284" y="324" width="22" height="72" rx="4" fill="#f8fafc" />
+  <!-- Black keys -->
+  <rect x="222" y="324" width="14" height="42" rx="2" fill="#1e293b" />
+  <rect x="248" y="324" width="14" height="42" rx="2" fill="#1e293b" />
+  <rect x="274" y="324" width="14" height="42" rx="2" fill="#1e293b" />
+
+  <!-- Glowing Musical Note in Center Top -->
+  <g filter="url(#glow)">
+    <!-- Note Stem & Flag -->
+    <circle cx="236" cy="220" r="26" fill="url(#gold)" />
+    <circle cx="296" cy="190" r="24" fill="url(#gold)" />
+    <rect x="254" y="100" width="12" height="120" rx="6" fill="url(#gold)" />
+    <rect x="312" y="80" width="12" height="110" rx="6" fill="url(#gold)" />
+    <polygon points="254,100 324,70 324,96 254,126" fill="url(#gold)" />
+  </g>
+
+  <!-- Right Slider Track & Cap (Cyan Blue) -->
+  <line x1="372" y1="120" x2="372" y2="390" stroke="#475569" stroke-width="12" stroke-linecap="round" />
+  <rect x="348" y="180" width="48" height="28" rx="7" fill="url(#cyan)" filter="url(#glow)" stroke="#ffffff" stroke-width="2" />
+  <line x1="356" y1="194" x2="388" y2="194" stroke="#0c4a6e" stroke-width="3" />
+
+  <!-- Audio Waves Arc on top -->
+  <path d="M 120 80 Q 256 30 392 80" fill="none" stroke="#f59e0b" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 12" opacity="0.6" />
+</svg>

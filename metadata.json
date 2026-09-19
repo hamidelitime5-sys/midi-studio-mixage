@@ -1,0 +1,6 @@
+{
+  "name": "MIDI Karaoke Studio",
+  "description": "Studio MIDI avec table de mixage 16 canaux pour SynthFont2, gestionnaire de banques SF2 avec auto-matching d'instruments pour morceaux MIDI, sortie Focusrite Scarlett Solo ASIO et lecteur de partitions tactile multi-formats.",
+  "requestFramePermissions": ["midi", "midi-sysex"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
