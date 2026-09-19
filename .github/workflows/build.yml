@@ -1,0 +1,41 @@
+name: Build MIDI Studio Release
+on:
+  push:
+    branches:
+      - main
+      - principal
+
+jobs:
+  build-tauri:
+    permissions:
+      contents: write
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: Build Tauri App
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: v1.0.0
+          releaseName: 'MIDI Studio v1.0.0'
+          releaseBody: 'Version automatique stable pour la scène avec SoundFont SF2 et mode Grande Feuille.'
+          releaseDraft: false
+          prerelease: false
