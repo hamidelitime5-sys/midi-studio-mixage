@@ -16,27 +16,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
+          node-version: 20
 
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install dependencies
-        run: bun install
+        run: npm install
+
+      - name: Build frontend
+        run: npm run build
 
       - name: Build Tauri Desktop App
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAURI_SIGNING_PRIVATE_KEY: ""
         with:
           tagName: v1.0.0
           releaseName: 'MIDI Studio v1.0.0'
-          releaseBody: 'Version stable automatisée pour la scène.'
+          releaseBody: 'Version stable de MIDI Studio pour la scène.'
           releaseDraft: false
           prerelease: false
