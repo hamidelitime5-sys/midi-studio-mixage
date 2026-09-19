@@ -29,16 +29,13 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Build frontend
-        run: bun run build
-
-      - name: Build Tauri App
+      - name: Build Tauri Desktop App
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: v1.0.0
           releaseName: 'MIDI Studio v1.0.0'
-          releaseBody: 'Version stable avec SoundFont SF2 et mode Grande Feuille.'
+          releaseBody: 'Version stable automatisée pour la scène.'
           releaseDraft: false
           prerelease: false
